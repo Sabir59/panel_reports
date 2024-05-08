@@ -1,0 +1,61 @@
+<div class="card">
+  <p-table
+    #dt
+    [columns]="cols"
+    [value]="reports"
+    styleClass="p-datatable-gridlines"
+    [tableStyle]="{ 'min-width': '50rem' }"
+    [paginator]="true"
+    [rows]="5"
+    [showCurrentPageReport]="true"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+    [rowsPerPageOptions]="[5, 10, 20]"
+  >
+    <ng-template pTemplate="caption">
+      <div class="flex align-items-center justify-content-between">Reports</div>
+    </ng-template>
+    <ng-template pTemplate="header" let-columns class="bg-slate-300">
+      <tr>
+        <th [pSortableColumn]="col.field" *ngFor="let col of columns">
+          <div class="flex items-center">
+            <span>{{ col.header }}</span>
+            <p-sortIcon [field]="col.field"></p-sortIcon>
+          </div>
+        </th>
+        <th>Action</th>
+      </tr>
+    </ng-template>
+    <ng-template
+      pTemplate="body"
+      let-rowData
+      let-columns="columns"
+      class="flex justify-end"
+    >
+      <tr class="border-b">
+        <td *ngFor="let col of columns">
+          {{ rowData[col.field] }}
+        </td>
+        <td class="flex gap-4">
+          <button
+            class="min-w-max py-2 px-4 rounded-sm text-white hover:opacity-70 transition-all duration-200 ease-in-out text-xs uppercase bg-slate-700"
+            (click)="exportPdf()"
+          >
+            view pdf
+          </button>
+          <button
+            class="min-w-max py-2 px-4 rounded-sm text-white hover:opacity-70 transition-all duration-200 ease-in-out text-xs uppercase bg-slate-700"
+            (click)="dt.exportCSV()"
+          >
+            download csv
+          </button>
+          <button
+            type="button"
+            class="min-w-max py-2 px-4 rounded-sm text-white hover:opacity-70 transition-all duration-200 ease-in-out text-xs uppercase bg-slate-700"
+          >
+            view html
+          </button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

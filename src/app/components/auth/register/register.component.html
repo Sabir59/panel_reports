@@ -1,0 +1,40 @@
+<div class="mx-auto flex flex-col justify-center items-center min-h-screen">
+  <section class="login">
+    <div class="login__header">
+      <p class="login__title">Create an Account</p>
+      <small class="login__subTitle">
+        Welcome back, please enter your details.
+      </small>
+    </div>
+    <form action="#" class="login__form">
+      <div class="login__inputGroup">
+        <label for="full_name" class="login__label">Full Name</label>
+        <input type="text" class="login__input" id="full_name" placeholder="Full Name" />
+      </div>
+      <div class="login__inputGroup">
+        <label for="email" class="login__label">Email Address</label>
+        <input type="text" class="login__input" id="email" placeholder="johndoe@gmail.com" />
+      </div>
+      <div class="login__inputGroup">
+        <label for="password" class="login__label">Password</label>
+        <input type="text" class="login__input" id="password" placeholder="*******" />
+      </div>
+      <div class="login__inputGroup">
+        <label for="confirm_password" class="login__label">Confirm Password</label>
+        <input type="text" class="login__input" id="confirm_password" placeholder="*******" />
+      </div>
+      <div class="login__checkbox">
+        <input type="checkbox" class="login__input" id="save_password" />
+        <label for="save_password" class="login__label">Remember me</label>
+      </div>
+
+      <div class="login__inputGroup">
+        <a routerLink="/dashboard" class="login__btn">Register</a>
+      </div>
+      <div class="login__noAccount">
+        <small class="login__noTitle">Don’t have an account?</small>
+        <a routerLink="/" class="login__redirect">Log in</a>
+      </div>
+    </form>
+  </section>
+</div>

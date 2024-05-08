@@ -1,0 +1,55 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Fonts
+@font-face {
+  font-family: "DmSans";
+  src: url("./assets/fonts/DMSans-Thin.ttf") format("truetype"),
+    /* Thin */ url("./assets/fonts/DMSans-ThinItalic.ttf") format("truetype"),
+    /* Thin Italic */ url("./assets/fonts/DMSans-ExtraLight.ttf")
+      format("truetype"),
+    /* ExtraLight */ url("./assets/fonts/DMSans-ExtraLightItalic.ttf")
+      format("truetype"),
+    /* ExtraLight Italic */ url("./assets/fonts/DMSans-Light.ttf")
+      format("truetype"),
+    /* Light */ url("./assets/fonts/DMSans-LightItalic.ttf") format("truetype"),
+    /* Light Italic */ url("./assets/fonts/DMSans-Regular.ttf")
+      format("truetype"),
+    /* Regular */ url("./assets/fonts/DMSans-Italic.ttf") format("truetype"),
+    /* Italic */ url("./assets/fonts/DMSans-Medium.ttf") format("truetype"),
+    /* Medium */ url("./assets/fonts/DMSans-MediumItalic.ttf")
+      format("truetype"),
+    /* Medium Italic */ url("./assets/fonts/DMSans-SemiBold.ttf")
+      format("truetype"),
+    /* SemiBold */ url("./assets/fonts/DMSans-SemiBoldItalic.ttf")
+      format("truetype"),
+    /* SemiBold Italic */ url("./assets/fonts/DMSans-Bold.ttf")
+      format("truetype"),
+    /* Bold */ url("./assets/fonts/DMSans-BoldItalic.ttf") format("truetype"),
+    /* Bold Italic */ url("./assets/fonts/DMSans-ExtraBold.ttf")
+      format("truetype"),
+    /* ExtraBold */ url("./assets/fonts/DMSans-ExtraBoldItalic.ttf")
+      format("truetype"); /* ExtraBold Italic */
+  font-style: normal; /* All variations have normal style */
+}
+
+body {
+  @apply bg-slate-100;
+}
+// body {
+//   font-family: "DmSans";
+//   font-weight: 400;
+//   font-style: normal;
+// }
+
+// @layer reset, primeng;
+
+// @layer reset {
+//   button {
+//     &:focus {
+//       box-shadow: none;
+//     }
+//   }
+// }

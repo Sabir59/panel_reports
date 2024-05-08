@@ -1,0 +1,38 @@
+.login {
+  @apply max-w-[390px] mx-auto p-8 bg-white;
+  &__header {
+    @apply flex flex-col gap-1 justify-center items-center;
+  }
+  &__title {
+    @apply text-xl text-slate-800 font-semibold;
+  }
+  &__subTitle {
+    @apply text-sm text-slate-600;
+  }
+
+  &__form {
+    @apply flex flex-col gap-5 mt-7;
+  }
+
+  &__inputGroup {
+    @apply flex flex-col gap-1;
+  }
+  &__label {
+    @apply text-sm text-slate-600;
+  }
+  &__input {
+    @apply border border-slate-300 px-5 py-2 rounded-sm flex focus:outline-[#081028];
+  }
+  &__checkbox {
+    @apply flex gap-1 items-center;
+  }
+  &__btn {
+    @apply bg-[#081028] text-white font-semibold px-3 py-2 rounded-sm text-center;
+  }
+  &__noAccount {
+    @apply flex justify-center items-center gap-1;
+  }
+  &__redirect {
+    @apply text-[#293628] font-medium;
+  }
+}

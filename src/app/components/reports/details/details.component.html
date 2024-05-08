@@ -1,0 +1,14 @@
+<div class="grid grid-cols-[280px_1fr]">
+    <app-sidebar></app-sidebar>
+    <div class="content bg-slate-100">
+        <app-header></app-header>
+        <div class="p-8">
+            <button (click)="goBack()" type="button"
+                class="bg-slate-900 p-3 rounded-md text-white min-w-24 my-5">Back</button>
+            <!-- <h2>Report Details</h2>
+            <p class="mb-10">This is the details of report with ID: {{ id }}</p> -->
+            <app-table></app-table>
+        </div>
+        <router-outlet> </router-outlet>
+    </div>
+</div>

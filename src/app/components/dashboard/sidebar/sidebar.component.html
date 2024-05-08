@@ -1,0 +1,251 @@
+<aside class="sidebar" [ngClass]="{ '!-translate-x-full': toggleSidebar }">
+  <!-- Header  -->
+  <div class="sidebar__header">
+    <a href="/" class="sidebar__logo">
+      <h1 class="font-medium text-white text-xl">Nexus Dashboard</h1>
+      <!-- <img src="../../../../assets/images/logo-main.png" alt="Logo" /> -->
+    </a>
+    <!-- <button type="button" class="sidebar__icon" (click)="toggleSidebarState()" disabled>
+      <ng-icon name="heroBars3"></ng-icon>
+    </button> -->
+  </div>
+  <!-- <div class="hero__search">
+    <input type="text" placeholder="Search"
+      class="hero__input w-full bg-[#0B1739] mt-10 px-5 py-2 rounded-md text-white" />
+  </div> -->
+  <!-- Body -->
+  <div class="sidebar__body">
+    <!-- Panel Basic -->
+    <section class="sidebar__panel">
+      <!-- <small class="sidebar__subTitle">dashboard</small> -->
+      <ul class="sidebar__list">
+        <!-- <li class="sidebar__item">
+          <a routerLink="#" class="sidebar__link">
+            <ng-icon name="heroDocumentChartBar"></ng-icon>
+            Overview
+          </a>
+        </li> -->
+        <li class="sidebar__item">
+          <a routerLink="/dashboard/welcome" class="sidebar__link">
+            <img src="assets/icons/ic-welcome.svg" alt="welcome">
+            Welcome
+          </a>
+        </li>
+        <li class="sidebar__item sidebar__item--dropdown">
+          <a class="sidebar__link" (click)="dropdownToggleHandler('reports'); $event.preventDefault()">
+            <img src="assets/icons/ic-mealpreps.svg" alt="Meal Preps">
+            Meal Prep Reports
+            <ng-icon name="heroChevronDown"></ng-icon>
+          </a>
+          <ul class="sidebar__dropdown" [ngClass]="{ '!max-h-72': toggleDropdown['reports'] }">
+            <li class="sidebar__dropdownItem">
+              <a routerLink="/dashboard/reports" class="sidebar__dropdownLink">
+                dashboard
+              </a>
+            </li>
+            <li class="sidebar__dropdownItem">
+              <a routerLink="/dashboard/reports" class="sidebar__dropdownLink">
+                packing slips
+              </a>
+            </li>
+            <li class="sidebar__dropdownItem">
+              <a routerLink="/dashboard/reports" class="sidebar__dropdownLink">
+                cooking reports
+              </a>
+            </li>
+            <li class="sidebar__dropdownItem">
+              <a routerLink="/dashboard/reports" class="sidebar__dropdownLink">
+                tip reports
+              </a>
+            </li>
+            <li class="sidebar__dropdownItem">
+              <a routerLink="/dashboard/reports" class="sidebar__dropdownLink">
+                revenue reports
+              </a>
+            </li>
+            <li class="sidebar__dropdownItem">
+              <a routerLink="/dashboard/reports" class="sidebar__dropdownLink">
+                route reports
+              </a>
+            </li>
+            <li class="sidebar__dropdownItem">
+              <a routerLink="/dashboard/reports" class="sidebar__dropdownLink">
+                ingredients reports
+              </a>
+            </li>
+            <li class="sidebar__dropdownItem">
+              <a routerLink="/dashboard/reports" class="sidebar__dropdownLink">
+                ingredients by meals
+              </a>
+            </li>
+            <li class="sidebar__dropdownItem">
+              <a routerLink="/daily" class="sidebar__dropdownLink">
+                Meal Prep Settings
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="sidebar__item">
+          <a routerLink="#" class="sidebar__link">
+            <img src="assets/icons/ic-labels.svg" alt="Labels">
+            Labels
+          </a>
+        </li>
+        <li class="sidebar__item">
+          <a routerLink="#" class="sidebar__link">
+            <img src="assets/icons/ic-ingredients.svg" alt="Ingredients">
+            Ingredients
+          </a>
+        </li>
+        <li class="sidebar__item">
+          <a routerLink="#" class="sidebar__link">
+            <img src="assets/icons/ic-orders.svg" alt="Orders">
+            Orders
+          </a>
+        </li>
+        <li class="sidebar__item">
+          <a routerLink="#" class="sidebar__link">
+            <img src="assets/icons/ic-users.svg" alt="Users">
+            Users
+          </a>
+        </li>
+        <li class="sidebar__item">
+          <a routerLink="#" class="sidebar__link">
+            <img src="assets/icons/ic-delivery-zone.svg" alt="Delivery-zone">
+            Delivery Zones
+          </a>
+        </li>
+        <li class="sidebar__item">
+          <a routerLink="#" class="sidebar__link">
+            <img src="assets/icons/ic-warehouse.svg" alt="Warehouse">
+            Warehouses
+          </a>
+        </li>
+        <li class="sidebar__item">
+          <a routerLink="#" class="sidebar__link">
+            <img src="assets/icons/ic-menu-scheduler.svg" alt="Menu Schedular">
+            Menu Schedular
+          </a>
+        </li>
+        <li class="sidebar__item">
+          <a routerLink="#" class="sidebar__link">
+            <img src="assets/icons/ic-products.svg" alt="Products">
+            Products
+          </a>
+        </li>
+        <li class="sidebar__item">
+          <a routerLink="#" class="sidebar__link">
+            <img src="assets/icons/ic-noftication.svg" alt="notifications">
+            push notifications
+          </a>
+        </li>
+        <li class="sidebar__item">
+          <a routerLink="#" class="sidebar__link">
+            <img src="assets/icons/ic-settings.svg" alt="Settings">
+            settings
+          </a>
+        </li>
+        <li class="sidebar__item">
+          <a routerLink="/dashboard/hmp-academy" class="sidebar__link">
+            <img src="assets/icons/ic-hmp-academy.svg" alt="Hmp-academy">
+            hmp academy
+          </a>
+        </li>
+        <li class="sidebar__item">
+          <a routerLink="#" class="sidebar__link">
+            <img src="assets/icons/ic-subscription.svg" alt="Subscription">
+            subscriptions
+          </a>
+        </li>
+        <li class="sidebar__item">
+          <a routerLink="#" class="sidebar__link">
+            <img src="assets/icons/ic-analytics.svg" alt="Analytics">
+            analytics
+          </a>
+        </li>
+        <!-- <li class="sidebar__item">
+          <a routerLink="/dashboard/reports" class="sidebar__link" (click)="dropdownToggleHandler('reports'); $event.preventDefault()">
+            <ng-icon name="heroDocument"></ng-icon>
+            reports
+            <ng-icon name="heroChevronDown"></ng-icon>
+          </a>
+          <ul class="sidebar__dropdown" [ngClass]="{ '!max-h-72': toggleDropdown['reports'] }">
+            <li class="sidebar__dropdownItem">
+              <a routerLink="/daily" class="sidebar__dropdownLink">
+                daily report
+              </a>
+            </li>
+            <li class="sidebar__dropdownItem">
+              <a routerLink="#" class="sidebar__dropdownLink">
+                weekly report
+              </a>
+            </li>
+          </ul>
+        </li> -->
+        <!-- <li class="sidebar__item">
+          <a routerLink="#" class="sidebar__link">
+            <ng-icon name="heroChartPie"></ng-icon>
+            products
+          </a>
+        </li>
+        <li class="sidebar__item">
+          <a routerLink="#" class="sidebar__link">
+            <ng-icon name="heroBell"></ng-icon>
+            notifications
+          </a>
+        </li>
+        <li class="sidebar__item">
+          <a routerLink="#" class="sidebar__link">
+            <ng-icon name="heroSquare3Stack3d"></ng-icon>
+            tasks
+          </a>
+        </li> -->
+      </ul>
+    </section>
+    <!-- Panel Rooms -->
+    <!-- <section class="sidebar__panel">
+      <small class="sidebar__subTitle">Users Management</small>
+      <ul class="sidebar__list">
+        <li class="sidebar__item">
+          <a href="#" class="sidebar__link" (click)="dropdownToggleHandler('users'); $event.preventDefault()">
+            <ng-icon name="heroUsers"></ng-icon>
+            users
+            <ng-icon name="heroChevronDown"></ng-icon>
+          </a>
+          <ul class="sidebar__dropdown" [ngClass]="{ '!max-h-72': toggleDropdown['users'] }">
+            <li class="sidebar__dropdownItem">
+              <a routerLink="#" class="sidebar__dropdownLink"> add user </a>
+            </li>
+            <li class="sidebar__dropdownItem">
+              <a routerLink="#" class="sidebar__dropdownLink"> edit user </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </section> -->
+    <!-- Help -->
+    <!-- <section class="sidebar__panel">
+      <small class="sidebar__subTitle">Settings</small>
+      <ul class="sidebar__list">
+        <li class="sidebar__item">
+          <a routerLink="#" class="sidebar__link">
+            <ng-icon name="heroAcademicCap"></ng-icon>
+            hmp academy
+          </a>
+        </li>
+        <li class="sidebar__item">
+          <a routerLink="#" class="sidebar__link">
+            <ng-icon name="heroClipboardDocumentCheck"></ng-icon>
+            subscription
+          </a>
+        </li>
+        <li class="sidebar__item">
+          <a routerLink="#" class="sidebar__link">
+            <ng-icon name="heroArrowTrendingUp"></ng-icon>
+            analytics
+          </a>
+        </li>
+      </ul>
+    </section> -->
+  </div>
+</aside>

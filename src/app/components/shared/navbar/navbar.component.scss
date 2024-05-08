@@ -1,0 +1,11 @@
+.navbar {
+  @apply flex;
+  &__list {
+    @apply flex items-center gap-8;
+  }
+  &__item {
+  }
+  &__link {
+    @apply text-white font-medium;
+  }
+}
